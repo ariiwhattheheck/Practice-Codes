@@ -4,18 +4,21 @@ using namespace std;
 
 int main()
 {
-   int num;
-   int lastDigit;
+    int num;
+    int reversed_number = 0;
+    int remainder;
 
-   cout << "Enter a number:";
-   cin >> num;
+    cout << "Enter number:";
+    cin >> num;
 
-   while (num>0)
-   {
-       lastDigit=num%10;
-       num=num/10;
+    while (num != 0)
+    {
+        remainder = num % 10;
+        reversed_number = reversed_number * 10 + remainder;
+        num /= 10;
+    }
 
-       cout <<lastDigit;
-   }
+    cout << "Reversed number: " << reversed_number << endl;
+
     return 0;
 }
